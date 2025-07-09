@@ -4,49 +4,79 @@ body {
 }
 
 h1 {
-  font-size: 200px;
+  font-size: 90px;
+  text-align: center
 }
 
 
+img {
+  max-width: 50%;
+  margin: auto
+}
+
 .kitchen-container {
   position: relative;
+  width: 100%;
+  max-width: 1500px;
+  margin: auto;
 }
 
 .kitchen-background {
   width: 100%;
+  height: auto;
   display: block;
 }
 
 .hotspot {
   position: absolute;
   cursor: pointer;
-  opacity: 0; /* invisible but clickable */
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  transition: box-shadow 0.3s, background-color 0.3s;
+  animation: glowPulse 2s infinite;
 }
 
-.hotspot.cabinet {
-  top: 20%;
-  left: 10%;
-  width: 10%;
-  height: 20%;
+.hotspot:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 15px 5px rgba(255, 255, 0, 0.6);
+}
+
+.hotspot.fridge {
+  top: 7%;
+  left: 23.5%;
+  width: 19%;
+  height: 90%;
 }
 
 .hotspot.book {
-  top: 30%;
-  left: 40%;
-  width: 10%;
-  height: 15%;
+  top: 6%;
+  left: 48.5%;
+  width: 5.5%;
+  height: 24%;
 }
 
 .hotspot.stove {
-  top: 60%;
-  left: 30%;
-  width: 15%;
-  height: 20%;
+  top: 22%;
+  left: 62%;
+  width: 14%;
+  height: 45%;
 }
 
 .hotspot.computer {
-  top: 50%;
-  left: 70%;
-  width: 15%;
-  height: 20%;
+  top: 4%;
+  left: 56.5%;
+  width: 8%;
+  height: 23%;
+}
+
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0 0 5px 2px rgba(59, 45, 244, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 15px 5px rgba(0, 55, 255, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 5px 2px rgba(59, 45, 244, 0.3);
+  }
 }
