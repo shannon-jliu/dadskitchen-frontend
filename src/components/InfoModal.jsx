@@ -4,11 +4,15 @@ import Modal from 'react-modal';
 export default function InfoModal({onClose}) {
 
     return (
-        <Modal>
-            <h2>Info</h2>
+        <Modal className="info-modal" overlayClassName="modal-overlay" isOpen onRequestClose={onClose} contentLabel="Info">
+            <div className="heading">
+                <h1>Info</h1>
+                <button onClick={onClose}>Close</button>
+            </div>
+            
             <ul>
                 <li>
-                    Click the <strong>refridgerator</strong> to view and update your inventory.
+                    Click the <strong>refrigerator</strong> to view and update your inventory.
                 </li>
                 <li>
                     Click the <strong>recipe book</strong> to view and update your recipes.

@@ -30,9 +30,12 @@ export default function InventoryModal({ onClose, chefId=1 }) {
   };
 
   return (
-    <Modal isOpen onRequestClose={onClose} contentLabel="Inventory">
-      <h2>Inventory</h2>
-      <button onClick={onClose}>Close</button>
+    <Modal className="inventory-modal" overlayClassName="modal-overlay" isOpen onRequestClose={onClose} contentLabel="Inventory">
+      <div className="heading">
+        <h2>Inventory</h2>
+        <button onClick={onClose}>Close</button>
+      </div>
+      
       {loading ? (
         <p>Loading...</p>
       ) : (

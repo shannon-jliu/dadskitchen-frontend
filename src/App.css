@@ -3,11 +3,36 @@ body {
   background-color: rgb(231, 213, 158);
 }
 
-h1 {
-  font-size: 90px;
-  text-align: center
+.welcome-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
 }
 
+.welcome-container h1 {
+  font-size: 100px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.welcome-container button {
+  background-color: rgba(131, 244, 45, 0.3);
+  color: black;
+  border-radius: 20px;
+  padding: 5px 10px;
+  border-color: rgba(9, 147, 39, 0.6);
+  transition: box-shadow 0.3s, background-color 0.3s ease, transform 0.2s ease;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.welcome-container button:hover {
+  background-color: rgba(5, 108, 27, 0.6);
+  transform: scale(1.05);
+  box-shadow: 0 0 15px 5px rgba(255, 255, 0, 0.188);
+}
 
 img {
   max-width: 50%;
@@ -30,15 +55,15 @@ img {
 .hotspot {
   position: absolute;
   cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: rgba(208, 244, 45, 0);
   border-radius: 8px;
   transition: box-shadow 0.3s, background-color 0.3s;
   animation: glowPulse 2s infinite;
 }
 
 .hotspot:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 0 15px 5px rgba(255, 255, 0, 0.6);
+  background-color: rgba(242, 223, 76, 0.152);
+  box-shadow: 0 0 15px 5px rgba(255, 255, 0, 0.188);
 }
 
 .hotspot.fridge {
@@ -71,12 +96,84 @@ img {
 
 @keyframes glowPulse {
   0% {
-    box-shadow: 0 0 5px 2px rgba(59, 45, 244, 0.3);
+    box-shadow: 0 0 5px 2px rgba(131, 244, 45, 0.3);
   }
   50% {
-    box-shadow: 0 0 15px 5px rgba(0, 55, 255, 0.6);
+    box-shadow: 0 0 15px 5px rgba(5, 108, 27, 0.6);
   }
   100% {
-    box-shadow: 0 0 5px 2px rgba(59, 45, 244, 0.3);
+    box-shadow: 0 0 5px 2px rgba(52, 244, 45, 0.3);
   }
+}
+
+.info-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%; 
+  height: 50%;
+  max-width: 90%;
+  padding: 20px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 12px;
+  box-shadow: 10px 10px 80px rgb(48, 126, 22);
+}
+
+.inventory-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%; 
+  height: 60%;
+  max-width: 90%;
+  padding: 20px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 12px;
+  box-shadow: 10px 10px 80px rgb(48, 126, 22);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(231, 213, 158, 0.7);
+}
+
+.info-modal .heading {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.info-modal h1 {
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.info-modal .inventory-modal button {
+  background-color: rgba(131, 244, 45, 0.3);
+  color: black;
+  border-radius: 20px;
+  padding: 5px 7px;
+  border-color: rgba(9, 147, 39, 0.6);
+  transition: box-shadow 0.3s, background-color 0.3s ease, transform 0.2s ease;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.modal ul {
+  padding-top: 20px;
+  text-align: left;
+  padding-left: 80px;
+  padding-right: 80px;
+  line-height: 1.8;
 }
