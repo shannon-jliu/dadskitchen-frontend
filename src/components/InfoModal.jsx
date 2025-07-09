@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import Modal from 'react-modal';
 
+Modal.setAppElement('#root');
+
 export default function InfoModal({onClose}) {
 
     return (
         <Modal className="info-modal" overlayClassName="modal-overlay" isOpen onRequestClose={onClose} contentLabel="Info">
-            <div className="heading">
+            <div className="modal-heading">
                 <h1>Info</h1>
-                <button onClick={onClose}>Close</button>
+                <button className="modal-close-button" onClick={onClose}>Close</button>
             </div>
             
             <ul>
